@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root{
+    --purple:hsl(259, 100%, 65%);
+    --light-red:hsl(0, 100%, 67%);
+    --off-wite:hsl(0, 0%, 94%);
+    --white:hsl(0, 0%, 100%);
+    --light-grey:hsl(0, 0%, 86%);
+    --smokey-grey:hsl(0, 1%, 44%);
+    --off-black:hsl(0, 0%, 8%);
+}
+html{
+    box-sizing: border-box;
+    font-size:62.5%;
+    font-family: 'Poppins',sans-serif;
+}
+
+* {
+    margin:0px;
+    padding:0px;
+}
+body{
+    height:100vh;
+    background-color: var(--light-grey);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:32rem;
+    padding:1rem;
+    background-color: var(--white);
+    border-radius:2rem;
+    border-bottom-right-radius: 10rem;
+    gap:2rem;
+
+}
+.card-container{
+display:flex;
+flex-direction: row;
+font-size:1.4rem;
+text-transform: uppercase;
+color:var(--smokey-grey);
+gap:2rem;
+margin-top:1rem;
+margin-bottom:2rem;
+}
+.card-input{
+    margin-top:3rem;
+}
+input{
+    width:7rem;
+    height:5rem;
+    border-radius:0.5rem;
+    border:none;
+    outline:1px solid black;
+    padding-left:1rem;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+input:focus{
+    outline:1px solid var(--purple);
+}
+img{
+    background-color:var(--purple);
+    border-radius:50%;
+    height:2.5rem;
+    padding:2rem;
+    object-fit: contain;
+    z-index:999;
+}
+img:hover{
+    background-color:black;
+}
+.date{
+    letter-spacing: 0.3rem;
+    font-weight:lighter;
+    font-size:1.2rem;
+    padding-bottom:0.5rem;
+}
+.arrow-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.arrow-container:before{
+        content:"";
+        width:10rem;
+        border:1px solid var(--light-grey);
+}
+.arrow-container:after{
+    content:"";
+    width:10rem;
+    border:1px solid var(--light-grey);
+}
+.results{
+    font-size:5.5rem;
+    font-style: italic;
+    font-weight:800;
+    line-height: 6rem;
+}
+
+#results-container{
+    margin-bottom:4rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#result-years, #result-months, #result-days{
+    color:var(--purple);
+}
+
+.error{
+    font-size:1rem;
+    color:var(--light-red);
+    font-style:italic;
+    text-transform:none;
+    margin-top:0.5rem;
+    display:none;
+}
+
+@media screen and (min-width:680px) {
+    main{
+        width:54rem;
+        align-items: start;
+        padding-left:4rem;
+
+    }
+    input{
+        width:10rem;
+    }
+    .arrow-container:after{
+        display:none;
+    }
+    .arrow-container:before{
+        width:45rem;
+    }
+}
