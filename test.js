@@ -50,7 +50,7 @@ button.addEventListener("click", function() {
     monthInput.value.trim() !== "" &&
     yearInput.value.trim() !== "" &&
     yearInput.value < 2023 &&
-    monthInput.value < 12 &&
+    monthInput.value <= 12 &&
     dayInput.value < 31
   ) {
     calculateAge();
