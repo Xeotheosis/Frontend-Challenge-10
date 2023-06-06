@@ -49,7 +49,7 @@ button.addEventListener("click", function() {
     dayInput.value.trim() !== "" &&
     monthInput.value.trim() !== "" &&
     yearInput.value.trim() !== "" &&
-    yearInput.value < 2023 &&
+    yearInput.value <= 2023 &&
     monthInput.value <= 12 &&
     dayInput.value < 31
   ) {
