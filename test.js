@@ -25,10 +25,38 @@ button.addEventListener("click", function() {
     errorYear.style.display = "none";
   }
 
+  if (dayInput.value <= 0 || dayInput.value > 31) {
+    errorDay.innerHTML = "Must be a valid day";
+    errorDay.style.display = "block";
+  } else {
+    errorDay.style.display = "none";
+  }
+  if (monthInput.value <= 0 || monthInput.value > 12) {
+    errorMonth.innerHTML = "Must be a valid month";
+    errorMonth.style.display = "block";
+  } else {
+    errorMonth.style.display = "none";
+  }
+  if (yearInput.value <= 0 || yearInput.value > 2023) {
+    errorYear.innerHTML = "Must be in the past";
+    errorYear.style.display = "block";
+  } else {
+    errorYear.style.display = "none";
+  }
+
   // Run calculateAge() only if all input fields are non-empty
-  if (dayInput.value.trim() !== "" && monthInput.value.trim() !== "" && yearInput.value.trim() !== "") {
+  if (
+    dayInput.value.trim() !== "" &&
+    monthInput.value.trim() !== "" &&
+    yearInput.value.trim() !== "" &&
+    yearInput.value < 2023 &&
+    monthInput.value < 12 &&
+    dayInput.value < 31
+  ) {
     calculateAge();
   }
+  
+  
 });
 
 function calculateAge() {
